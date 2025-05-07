@@ -23,6 +23,8 @@ if(isset($message)){
          <a href="menu.php">menu</a>
          <a href="orders.php">orders</a>
          <a href="contact.php">contact</a>
+         <a href="diagnosis.php">Diagnosis</a> <!-- Added -->
+        <a href="diet_plans.php">Diet Plans</a><!-- Added -->
       </nav>
 
       <div class="icons">
