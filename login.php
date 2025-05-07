@@ -14,7 +14,7 @@ if(isset($_POST['submit'])){
 
    $email = $_POST['email'];
    $email = filter_var($email, FILTER_SANITIZE_STRING);
-   $pass = $_POST['pass'];
+   $pass = sha1($_POST['pass']);
    $pass = filter_var($pass, FILTER_SANITIZE_STRING);
 
    $select_user = $conn->prepare("SELECT * FROM `users` WHERE email = ? AND password = ?");
@@ -25,8 +25,7 @@ if(isset($_POST['submit'])){
       $_SESSION['user_id'] = $row['id'];
       header('location:home.php');
    }else{
-      $_SESSION['user_id'] = 1;
-      header('location:home.php');
+      $message[] = 'incorrect username or password!';
    }
 
 }
